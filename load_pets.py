@@ -40,5 +40,7 @@ query = """Person: (1, 'James', 'Smith', 41)
          Person_Pet: (4, 6)"""
 
 query = split_query(query, '\n')
+for line in query:
+    print(line)
 db_setup(query)
 
