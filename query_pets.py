@@ -1,7 +1,7 @@
 import sqlite3 as lite
 
 
-def prog():
+def main():
     while True:
         choice_str = []
         choice = input('Please select person ID number: ')
@@ -34,4 +34,4 @@ def db_query(query_str):
 
 
 if __name__ == '__main__':
-    prog()
+    main()
