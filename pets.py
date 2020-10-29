@@ -10,11 +10,8 @@ def db_setup(query_str=str()):
     conn.close()
 
 
-def split_query(query_str=str(),split=str()):
-    query_split = query_str.split(split)
-    query_return = []
-    for line in query_split:
-        query_return = query_return + [line+split]
+def split_query(query_str=str()):
+    query_return = [line+');' for line in query_str.split(');')]
     query_return.pop()
     return query_return
 
@@ -37,5 +34,5 @@ CREATE TABLE person_pet(
     pet_id INTEGER
 );"""
 
-query = split_query(query, ');')
+query = split_query(query)
 db_setup(query)
